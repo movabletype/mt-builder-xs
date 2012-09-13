@@ -1,0 +1,27 @@
+MT-Builder-XS version 0.01
+==========================
+
+This is a drop-in replacement to the Pure-Perl compiler inside MT::Builder.
+After installation, MT::Builder will detect that it is installed, and 
+will use it instead of the Perl compiler. 
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+Please make sure that you are installing on the same Perl that MT is using
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2012 by Six Apart
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.12.4 or,
+at your option, any later version of Perl 5 you may have available.
+
+

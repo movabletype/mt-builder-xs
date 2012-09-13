@@ -1,0 +1,6 @@
+Revision history for Perl extension MT::Builder::XS.
+
+0.01  Tue Aug 21 11:27:05 2012
+	- original version; created by h2xs 1.23 with options
+		-An MT::Builder::XS
+
