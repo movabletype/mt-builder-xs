@@ -226,7 +226,7 @@ void add_tag_parents(pTHX_ compiler_s *cs, AV *p_tag, bool is_text) {
         av_push(parent->child_nodes, sv_bless(newRV_noinc((SV*)p_tag), cs->node_package));
         av_push(p_tag, (is_text ? &PL_sv_undef : sv_rvweaken(newRV_inc((SV*)parent->perl_hash))));
     }
-    av_push(p_tag, (cs->template == NULL ? &PL_sv_undef : sv_rvweaken(newRV_inc((SV*)cs->template))));
+    av_push(p_tag, ((cs->template == NULL) ? &PL_sv_undef : sv_rvweaken(newRV_inc((SV*)cs->template))));
 }
 
 void create_text_tag(pTHX_ compiler_s *cs, int end) {
@@ -520,7 +520,7 @@ compiler(handlers, modifiers, ids, classes, error, text, template)
         cs.blocks = NULL;
         cs.tokens = newAV();
         cs.space_eater = false;
-        if (template) {
+        if (SvOK(template)) {
             cs.template = (HV*)SvRV(template);
         }
         else {
